@@ -136,7 +136,7 @@ const App = () => {
     }
   };
 
-  console.log(scoreDisplay);
+  // console.log(scoreDisplay);
 
   const dragStart = (e) => {
     setSquareBeingDragged(e.target);
@@ -179,8 +179,9 @@ const App = () => {
       setSquareBeingDragged(null);
       setSquareBeingReplaced(null);
     } else {
-      currentColorArrangement[squareBeingDraggedId] =
-        squareBeingReplaced.style.backgroundColor;
+      currentColorArrangement[squareBeingDraggedId] = currentColorArrangement[
+        squareBeingReplacedId
+      ] = squareBeingReplaced.getAttribute("src");
       currentColorArrangement[squareBeingDraggedId] =
         squareBeingDragged.getAttribute("src");
       setCurrentColorArrangement([...currentColorArrangement]);
